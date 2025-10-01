@@ -1,9 +1,28 @@
 # Netflix-GPT
-- create REact App
-- Configured Tailwind Setup
-- Header
-- Login Form 
-- Sign Up Form
+ - Search Bar
+ - Movie Suggestion      
+
+
+ ✨ Highlights
+
+🔐 Auth flow: Email/password Sign Up, Sign In,Update Profile and Sign Out with Firebase.
+
+🔁 Protected routing: Redirect unauthenticated users to Login; authenticated users to Browse.
+
+🎞️ Hero trailer: Autoplay background trailer with overlayed title & description.
+
+🍿 Movie rows: Multiple, scrollable lists (e.g., Trending, Top Rated, etc.).
+
+🧠 State management: Centralized Redux Toolkit store with a userSlice.
+
+🔎 Smart search: Search bar with inline suggestions.
+
+⚡ Tailwind UI: Responsive, utility‑first styling.
+
+☁️ 1‑click deploy: Firebase Hosting production build.
+
+This is an educational project (a UI clone) and not affiliated with Netflix.
+
 
 # Features
 - Login / Sign UP
@@ -18,6 +37,3 @@
   - Movie Suggestion
    - Multiple Diffrent Movie List
 
-# Netflix-GPT
- - Search Bar
- - Movie Suggestion      
