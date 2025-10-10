@@ -6,20 +6,20 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
 const Login = () => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const [IsSignInForm, setIsSignInForm] = useState(true);
   const [ErrorMessage, setErrorMessage] = useState(null);
   const Email = useRef(null);
   const Password = useRef(null);
   const Name = useRef(null);
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleButtonClick = () => {
     const emailValue = Email.current?.value || "";
@@ -37,16 +37,24 @@ const dispatch = useDispatch();
       createUserWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
           const user = userCredential.user;
-          updateProfile(user ,{
+          updateProfile(user, {
             displayName: Name.current.value,
             photoURL: "https://avatars.githubusercontent.com/u/162986996?v=4",
           })
             .then(() => {
-const { uid, email, displayName, photoURL } = auth.currentUser;
-                dispatch(addUser({ uid: uid, email: email, displayName: displayName, photoURL: photoURL }));                        navigate("/browse");
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
+              // navigate("/browse");
             })
             .catch((error) => {
-                        setErrorMessage( error.message);
+              setErrorMessage(error.message);
             });
           // window.alert("Sign Up Success: " + user.email);
         })
@@ -65,7 +73,7 @@ const { uid, email, displayName, photoURL } = auth.currentUser;
       signInWithEmailAndPassword(auth, emailValue, passwordValue)
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browse");
+          // navigate("/browse");
         })
         .catch((error) => {
           setErrorMessage(error.code + ": " + error.message);
