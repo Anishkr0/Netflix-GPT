@@ -3,17 +3,11 @@ const VideoTitle = ({ title, overview, backdropPath }) => {
 
   return (
     <div
-      className="relative w-full h-[90vh] flex flex-col justify-center px-12 text-white overflow-hidden"
-      // style={{
-      //   //backgroundImage: `url(${bgUrl})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      // }}
-    >
+      className="w-full h-[90vh] flex flex-col justify-center px-12 text-white overflow-hidden absolute">
       {/* Overlay (dark gradient for readability) */}
-      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+      <div className=" w-screen aspect-video absolute inset-0 bg-gradient-to-r from-black "></div>
 
-      {/* Movie info */}
+      {/* Movie info  via-black/70 to-transparent*/}
       <div className="relative z-10 max-w-2xl space-y-4">
         <h1 className="text-5xl font-bold drop-shadow-lg">{title}</h1>
         <p className="text-lg leading-relaxed opacity-90 w-2/4">{overview}</p>
