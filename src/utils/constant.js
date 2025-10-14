@@ -7,7 +7,7 @@ const options = {
 };
 
 export const  API_options = options;
-
+export const IMG_URL_POST ="https://image.tmdb.org/t/p/w500"; 
 
 // const options = {
 //   method: 'GET',

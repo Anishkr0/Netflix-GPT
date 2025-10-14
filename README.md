@@ -2,7 +2,6 @@
  - Search Bar
  - Movie Suggestion      
 
-
  ✨ Highlights
 
 🔐 Auth flow: Email/password Sign Up, Sign In,Update Profile and Sign Out with Firebase.
@@ -19,8 +18,6 @@
 
 ⚡ Tailwind UI: Responsive, utility‑first styling.
 
-☁️ 1‑click deploy: Firebase Hosting production build.
-
 This is an educational project (a UI clone) and not affiliated with Netflix.
 
 
@@ -35,5 +32,5 @@ This is an educational project (a UI clone) and not affiliated with Netflix.
   - Trailer in Background
   - Title and Description
   - Movie Suggestion
-   - Multiple Diffrent Movie List
+  - Multiple Diffrent Movie List
 

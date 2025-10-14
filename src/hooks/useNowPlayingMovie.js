@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { API_options } from "../utils/constant";
 import { addNowPlayingMovies } from "../utils/moviesSlice";
 //WORKING FINE
-const useNowPlayingMovies = () => {
+const useNowPlayingMovie = (movieId) => {
     //fetching the data from the  TMDB API and Updadte the Store of redux
     // const Dispatch = useDispatch();
     const dispatch = useDispatch();
@@ -18,4 +18,4 @@ const useNowPlayingMovies = () => {
         getNowPlayingMovies();
     },[]);
 }
-export default useNowPlayingMovies; 
+export default useNowPlayingMovie; 
