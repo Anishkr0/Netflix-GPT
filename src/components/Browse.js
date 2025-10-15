@@ -3,13 +3,14 @@ import useNowPlayingMovies from "../hooks/useNowPlayingMovie";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
 import usePopularMovies from "../hooks/usePopularMovies";
+import useTopRated from "../hooks/useTopRated";
+import useUpcoming from "../hooks/useUpcoming";
 
 const Browse = () => {
-    //    console.log("Browse ane rendered");
-
-    useNowPlayingMovies();
-//    useNowPlayingMovies();
-   usePopularMovies();
+useNowPlayingMovies();
+    usePopularMovies();
+    useTopRated();
+    useUpcoming();
         // fetching the data from the  TMDB API and Updadte the Store of redux
     return (
         <div>
