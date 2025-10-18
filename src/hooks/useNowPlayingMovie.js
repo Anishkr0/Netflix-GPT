@@ -10,7 +10,7 @@ const useNowPlayingMovie = () => {
         try {
             const data = await fetch("https://api.themoviedb.org/3/movie/now_playing?page=1", API_options);
             const json = await data.json();
-            console.log("Now Playing Movies:", json.results);
+            // console.log("Now Playing Movies:", json.results);
             dispatch(addNowPlayingMovies(json.results));
         } catch (error) {
             console.error("Error fetching now playing movies:", error);

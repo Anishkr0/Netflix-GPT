@@ -8,7 +8,7 @@ const useTopRated = () => {
         try {
             const data = await fetch("https://api.themoviedb.org/3/movie/top_rated?page=1", API_options);
             const json = await data.json();
-            console.log("TopRated Movies:", json.results);
+            // console.log("TopRated Movies:", json.results);
             dispatch(addTopRated(json.results));
         } catch (error) {
             console.error("Error fetching popular movies:", error);
