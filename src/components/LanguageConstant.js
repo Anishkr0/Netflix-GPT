@@ -10,6 +10,11 @@ const lang = {
     spanish: {
         search: "buscar",
         gptSearchPlaceholder: "¿Qué te gustaría ver hoy?"
+    },
+    german: {
+        search: "Suche",
+        gptSearchPlaceholder: "Was möchten Sie heute sehen?"
     }
+        
 };
 export default lang;

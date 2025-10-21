@@ -7,6 +7,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 import { NETFLX_LOGO, SUPPORTED_LANGUAGE } from "../utils/constant";
 import { toogleGptSerchView } from "../utils/gptSlice";
 import lang from "./LanguageConstant";
+import { changeLanguage } from "../utils/configSlice";
 // import { SUPPORTED_LANGUAGE } from "../utils/constant";
 const Header = () => {
   const navigate = useNavigate();
@@ -45,6 +46,11 @@ const Header = () => {
     dispatch(toogleGptSerchView());
     //Toggle GPT
   };
+  const handleLanguageChange= (e)=>{
+    //handle language change
+    // console.log("Selected Language:", e.target.value);
+    dispatch(changeLanguage(e.target.value))
+  }
   return (
     <div className="absolute  px-9 py-2 bg-gradient-to-b from-black z-40 flex justify-between w-full items-center">
       <img
@@ -54,7 +60,7 @@ const Header = () => {
       />
       {user && (
         <div className="flex">
-          <select>
+          <select className="p-2 m-2 bg-gray-900 text-white " onChange={handleLanguageChange}>
             {SUPPORTED_LANGUAGE.map((lang) => (
               <option key={lang.identifier} value={lang.identifier}>
                 {lang.name}
