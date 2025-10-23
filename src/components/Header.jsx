@@ -46,11 +46,12 @@ const Header = () => {
     dispatch(toogleGptSerchView());
     //Toggle GPT
   };
-  const handleLanguageChange= (e)=>{
+  const handleLanguageChange = (e) => {
     //handle language change
     // console.log("Selected Language:", e.target.value);
-    dispatch(changeLanguage(e.target.value))
-  }
+    dispatch(changeLanguage(e.target.value));
+  };
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
   return (
     <div className="absolute  px-9 py-2 bg-gradient-to-b from-black z-40 flex justify-between w-full items-center">
       <img
@@ -60,7 +61,10 @@ const Header = () => {
       />
       {user && (
         <div className="flex">
-          <select className="p-2 m-2 bg-gray-900 text-white " onChange={handleLanguageChange}>
+         { showGptSearch && <select
+            className="p-2 m-2 bg-gray-900 text-white "
+            onChange={handleLanguageChange}
+          >
             {SUPPORTED_LANGUAGE.map((lang) => (
               <option key={lang.identifier} value={lang.identifier}>
                 {lang.name}
@@ -69,12 +73,12 @@ const Header = () => {
 
             {/* <option value="hindi">Hindi</option>
             <option value="spanish">Spanish</option> */}
-          </select>
+          </select>}
           <button
             className="px-2 py-2 m-2 text-white bg-black rounded-2xl"
             onClick={handleGptSearchClick}
           >
-            GPT Search
+           {showGptSearch ? "Homepage":"GPT Search"} 
           </button>
           <img className="w-13 h-12  rounded-full" src={user?.photoURL} />
           <button
