@@ -16,4 +16,3 @@ export const SUPPORTED_LANGUAGE = [{ identifier: "en", name: "English" },
 { identifier: "spanish", name: "Spanish" },
 { identifier: "german", name: "German" }];
 
-export const 
