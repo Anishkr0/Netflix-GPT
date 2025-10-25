@@ -1,11 +1,22 @@
 import { useSelector } from "react-redux";
 import lang from "./LanguageConstant";
 import { useRef } from "react";
+import openai from "../utils/openai";
 
 const SerchBar = () => {
     const SearchText = useRef(null);
-    const handleGptSearchClick=()=>{
-console.log(SearchText.current.value)
+    const handleGptSearchClick = async() => {
+        console.log(SearchText.current.value);
+// //make an API call to GPT API and get the movies in Result format 
+ const gptResults =  await openai.chat.completions.create({
+  model: 'gpt-4o',
+  messages: [
+    { role: 'developer', content: 'Talk like a pirate.' },
+    { role: 'user', content: 'Are semicolons optional in JavaScript?' },
+  ],
+});
+console.log(gptResults);
+
     }
     const langkey = useSelector((store) => store.config.lang);
     return (
